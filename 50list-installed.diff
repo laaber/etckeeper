@@ -1,0 +1,10 @@
+--- list-installed.d/50list-installed.old       2020-02-21 11:53:41.374000000 +0100
++++ list-installed.d/50list-installed   2020-02-21 11:54:52.473000000 +0100
+@@ -23,5 +23,7 @@
+                pkg info -E "*"
+        elif [ "$LOWLEVEL_PACKAGE_MANAGER" = apk ]; then
+                apk info -v | sort
++       elif [ "$LOWLEVEL_PACKAGE_MANAGER" = slackpkg ]; then
++               ls -1 /var/log/packages/
+        fi
+ fi
